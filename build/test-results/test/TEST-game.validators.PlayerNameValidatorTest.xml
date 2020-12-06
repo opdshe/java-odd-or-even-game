@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="game.validators.PlayerNameValidatorTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2020-12-06T09:51:06" hostname="MacBook-Pro.local" time="0.054">
+  <properties/>
+  <testcase name="이름으로_공백_입력시_예외_발생" classname="game.validators.PlayerNameValidatorTest" time="0.05"/>
+  <testcase name="중복되는_이름_입력시_예외_발생" classname="game.validators.PlayerNameValidatorTest" time="0.002"/>
+  <testcase name="개행문자_입력시_예외_발생" classname="game.validators.PlayerNameValidatorTest" time="0.001"/>
+  <testcase name="최대길이보다_긴_이름_입력시_예외_발생" classname="game.validators.PlayerNameValidatorTest" time="0.001"/>
+  <testcase name="올바른_이름_입력시_예외_발생안함" classname="game.validators.PlayerNameValidatorTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
