@@ -1,6 +1,7 @@
 package game.views;
 
 import game.domain.BettingMoney;
+import game.domain.Player;
 import game.domain.SuperBettingMapper;
 import game.validators.BettingMoneyValidator;
 import game.validators.PlayerNameValidator;
@@ -55,15 +56,15 @@ public class InputView {
         }
     }
 
-    public static BettingMoney inputBettingMoney(Scanner scanner) {
+    public static BettingMoney inputBettingMoney(Player user, Scanner scanner) {
         OutputView.printMessageAndNewLine(INPUT_BETTING_MONEY);
         String bettingMoney = scanner.nextLine();
         try {
-            BettingMoneyValidator.validateBettingMoney(bettingMoney);
+            BettingMoneyValidator.validateBettingMoney(user, bettingMoney);
             return new BettingMoney(Integer.parseInt(bettingMoney));
         } catch (IllegalArgumentException exception) {
             OutputView.printMessageAndNewLine(exception.getMessage());
-            return inputBettingMoney(scanner);
+            return inputBettingMoney(user, scanner);
         }
     }
 }

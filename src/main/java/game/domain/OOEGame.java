@@ -16,4 +16,8 @@ public class OOEGame {
     public TargetNumber createTargetNumber() {
         return new TargetNumber(this.generatingStrategy.generate());
     }
+
+    public Player getUser() {
+        return user;
+    }
 }

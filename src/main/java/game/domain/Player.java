@@ -11,4 +11,8 @@ public class Player {
         this.name = name;
         this.balance = INITIAL_BALANCE;
     }
+
+    public boolean isAvailableBettingMoney(int bettingMoney) {
+        return balance >= bettingMoney;
+    }
 }

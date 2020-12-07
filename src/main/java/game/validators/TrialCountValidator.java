@@ -1,7 +1,7 @@
 package game.validators;
 
-import game.exceptions.NotNumericTrialCountException;
-import game.exceptions.NotPositiveTrialCountException;
+import game.exceptions.NotNumericException;
+import game.exceptions.NotPositiveException;
 
 public class TrialCountValidator {
     private static final int ZERO = 0;
@@ -16,7 +16,7 @@ public class TrialCountValidator {
 
     private static void validateNumeric(String trialCount) {
         if (!isNumeric(trialCount)) {
-            throw new NotNumericTrialCountException();
+            throw new NotNumericException();
         }
     }
 
@@ -31,11 +31,11 @@ public class TrialCountValidator {
 
     private static void validatePositive(String trialCount) {
         if (!isPositive(trialCount)) {
-            throw new NotPositiveTrialCountException();
+            throw new NotPositiveException();
         }
     }
 
     private static boolean isPositive(String trialCount) {
-        return Integer.valueOf(trialCount) > ZERO;
+        return Integer.parseInt(trialCount) > ZERO;
     }
 }

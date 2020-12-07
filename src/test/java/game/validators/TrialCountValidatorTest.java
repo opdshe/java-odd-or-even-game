@@ -1,7 +1,7 @@
 package game.validators;
 
-import game.exceptions.NotNumericTrialCountException;
-import game.exceptions.NotPositiveTrialCountException;
+import game.exceptions.NotNumericException;
+import game.exceptions.NotPositiveException;
 import org.junit.Test;
 
 import static org.assertj.core.api.Assertions.assertThatExceptionOfType;
@@ -24,9 +24,9 @@ public class TrialCountValidatorTest {
         String floatTrialCount = "3.4";
 
         //when & then
-        assertThatExceptionOfType(NotNumericTrialCountException.class)
+        assertThatExceptionOfType(NotNumericException.class)
                 .isThrownBy(() -> TrialCountValidator.validateTrialCount(hangulTrialCount));
-        assertThatExceptionOfType(NotNumericTrialCountException.class)
+        assertThatExceptionOfType(NotNumericException.class)
                 .isThrownBy(() -> TrialCountValidator.validateTrialCount(floatTrialCount));
     }
 
@@ -36,7 +36,7 @@ public class TrialCountValidatorTest {
         String trialCount = "0";
 
         //when & then
-        assertThatExceptionOfType(NotPositiveTrialCountException.class)
+        assertThatExceptionOfType(NotPositiveException.class)
                 .isThrownBy(() -> TrialCountValidator.validateTrialCount(trialCount));
     }
 }
