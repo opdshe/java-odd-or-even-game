@@ -1,5 +1,8 @@
 package game;
 
+import game.domain.OOEGame;
+import game.domain.OOEGameCreator;
+import game.domain.strategies.RandomNumberStrategy;
 import game.views.InputView;
 
 import java.util.List;
@@ -14,8 +17,8 @@ public class Application {
 
     private static void play(Scanner scanner) {
         List<String> playerNames = InputView.inputPlayerNames(scanner);
-        for (String playerName : playerNames) {
-            System.out.println(playerName);
-        }
+        int count = InputView.inputTrialCount(scanner);
+
+        OOEGame ooeGame = OOEGameCreator.createOOEGame(playerNames, new RandomNumberStrategy());
     }
 }
