@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="game.validators.BettingMoneyValidatorTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2020-12-07T06:21:04" hostname="MacBook-Pro.local" time="0.048">
-  <properties/>
-  <testcase name="잔고보다_많은_배팅금액_입력시_예외_발생" classname="game.validators.BettingMoneyValidatorTest" time="0.048"/>
-  <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>
