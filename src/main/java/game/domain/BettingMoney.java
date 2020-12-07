@@ -8,4 +8,8 @@ public class BettingMoney {
     public BettingMoney(int money) {
         this.money = money;
     }
+
+    public int getMoney() {
+        return money;
+    }
 }

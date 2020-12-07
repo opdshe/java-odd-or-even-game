@@ -17,6 +17,16 @@ public class OOEGame {
         return new TargetNumber(this.generatingStrategy.generate());
     }
 
+    public void win(BettingMoney bettingMoney) {
+        user.win(bettingMoney);
+        computer.lose(bettingMoney);
+    }
+
+    public void lose(BettingMoney bettingMoney) {
+        user.lose(bettingMoney);
+        computer.win(bettingMoney);
+    }
+
     public Player getUser() {
         return user;
     }

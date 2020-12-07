@@ -12,7 +12,19 @@ public class Player {
         this.balance = INITIAL_BALANCE;
     }
 
+    public void win(BettingMoney bettingMoney) {
+        balance += bettingMoney.getMoney();
+    }
+
+    public void lose(BettingMoney bettingMoney) {
+        balance -= bettingMoney.getMoney();
+    }
+
     public boolean isAvailableBettingMoney(int bettingMoney) {
         return balance >= bettingMoney;
+    }
+
+    public int getBalance() {
+        return balance;
     }
 }
