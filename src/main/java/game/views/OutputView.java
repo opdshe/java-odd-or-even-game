@@ -1,6 +1,7 @@
 package game.views;
 
-import game.domain.result.Result;
+import game.domain.result.NormalModeResult;
+import game.domain.result.SuperBettingModeResult;
 
 public class OutputView {
     private static final String WIN_MESSAGE = "정답입니다. ";
@@ -11,22 +12,30 @@ public class OutputView {
     private OutputView() {
     }
 
-    public static void printResultMessage(Result result) {
+    public static void printNormalResultMessage(NormalModeResult result) {
         if (result.isWin()) {
-            printWinMessage(result);
+            printNormalModeWinMessage(result);
             return;
         }
-        printLoseMessage(result);
+        printNormalModeLoseMessage(result);
     }
 
-    private static void printWinMessage(Result result) {
+    private static void printNormalModeWinMessage(NormalModeResult result) {
         int money = result.getBettingMoney();
         printMessageAndNewLine(WIN_MESSAGE + money + OBTAIN_MONEY_MESSAGE);
     }
 
-    private static void printLoseMessage(Result result) {
+    private static void printNormalModeLoseMessage(NormalModeResult result) {
         int money = result.getBettingMoney();
         printMessageAndNewLine(LOSE_MESSAGE + money + LOSE_MONEY_MESSAGE);
+    }
+
+    public static void printSuperBettingResultMessage(SuperBettingModeResult result) {
+        if (result.isWin()) {
+            printMessageAndNewLine(WIN_MESSAGE);
+            return;
+        }
+        printMessageAndNewLine(LOSE_MESSAGE);
     }
 
     public static void printMessageAndNewLine(String message) {

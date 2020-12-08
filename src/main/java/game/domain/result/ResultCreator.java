@@ -8,10 +8,17 @@ public class ResultCreator {
     private ResultCreator() {
     }
 
-    public static Result createResult(TargetNumber number, BettingMoney bettingMoney, OddOrEven oddOrEven) {
+    public static NormalModeResult createNormalResult(TargetNumber number, BettingMoney bettingMoney, OddOrEven oddOrEven) {
         if (number.isRightOddOrEven(oddOrEven)) {
-            return new Result(bettingMoney.getMoney(), Result.ResultFlag.WIN);
+            return new NormalModeResult(bettingMoney.getMoney(), Result.ResultFlag.WIN);
         }
-        return new Result(bettingMoney.getMoney(), Result.ResultFlag.LOSE);
+        return new NormalModeResult(bettingMoney.getMoney(), Result.ResultFlag.LOSE);
+    }
+
+    public static SuperBettingModeResult createSuperBettingModeResult(TargetNumber number, int superBettingNumber) {
+        if (number.isRightSuperBettingNumber(superBettingNumber)) {
+            return new SuperBettingModeResult(Result.ResultFlag.WIN);
+        }
+        return new SuperBettingModeResult(Result.ResultFlag.LOSE);
     }
 }
