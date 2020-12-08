@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="game.domain.strategies.ResultCreatorTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2020-12-08T04:24:22" hostname="MacBook-Pro.local" time="0.06">
+  <properties/>
+  <testcase name="홀짝_틀린경우_확인" classname="game.domain.strategies.ResultCreatorTest" time="0.06"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

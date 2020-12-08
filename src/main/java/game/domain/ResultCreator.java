@@ -1,9 +1,4 @@
-package game.domain.strategies;
-
-import game.domain.BettingMoney;
-import game.domain.OddOrEven;
-import game.domain.Result;
-import game.domain.TargetNumber;
+package game.domain;
 
 public class ResultCreator {
     private ResultCreator() {
