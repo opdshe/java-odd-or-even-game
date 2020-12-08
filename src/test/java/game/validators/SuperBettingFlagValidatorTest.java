@@ -6,7 +6,7 @@ import org.junit.Test;
 import static org.assertj.core.api.Assertions.assertThatExceptionOfType;
 import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
 
-public class SuperBettingValidatorTest {
+public class SuperBettingFlagValidatorTest {
     @Test
     public void 올바른_입력시_예외_발생안함() {
         //given
@@ -14,8 +14,8 @@ public class SuperBettingValidatorTest {
         String two = "2";
 
         //when & then
-        assertDoesNotThrow(() -> SuperBettingValidator.validateSuperBetting(one));
-        assertDoesNotThrow(() -> SuperBettingValidator.validateSuperBetting(two));
+        assertDoesNotThrow(() -> SuperBettingFlagValidator.validateSuperBetting(one));
+        assertDoesNotThrow(() -> SuperBettingFlagValidator.validateSuperBetting(two));
     }
 
     @Test
@@ -25,6 +25,6 @@ public class SuperBettingValidatorTest {
 
         //when & then
         assertThatExceptionOfType(NotSupportedCommandException.class)
-                .isThrownBy(() -> SuperBettingValidator.validateSuperBetting(notSupportedCommand));
+                .isThrownBy(() -> SuperBettingFlagValidator.validateSuperBetting(notSupportedCommand));
     }
 }

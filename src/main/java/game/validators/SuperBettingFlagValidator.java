@@ -5,7 +5,7 @@ import game.exceptions.NotSupportedCommandException;
 import java.util.HashSet;
 import java.util.Set;
 
-public class SuperBettingValidator {
+public class SuperBettingFlagValidator {
     private static final String USE_SUPER_BETTING = "1";
     private static final String NOT_USE_SUPER_BETTING = "2";
 
