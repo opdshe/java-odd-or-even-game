@@ -1,5 +1,6 @@
 package game.domain.ooegame;
 
+import game.domain.Status;
 import game.domain.TargetNumber;
 import game.domain.player.Player;
 import game.domain.strategies.NumberGeneratingStrategy;
@@ -39,6 +40,16 @@ public class OOEGame {
         int money = user.getHalfOfBalance();
         user.win(money);
         computer.lose(money);
+    }
+
+    public void terminateIfAnyoneBankrupt(Status status) {
+        if (isAnyoneBankrupt()) {
+            status.terminate();
+        }
+    }
+
+    private boolean isAnyoneBankrupt() {
+        return computer.isBankrupt() || user.isBankrupt();
     }
 
     public Player getUser() {

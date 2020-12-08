@@ -1,6 +1,7 @@
 package game.domain.ooegame;
 
 import game.domain.BettingMoney;
+import game.domain.Status;
 import game.domain.TargetNumber;
 import game.domain.oddoreven.OddOrEven;
 import game.domain.result.NormalModeResult;
@@ -12,14 +13,16 @@ import game.views.OutputView;
 import java.util.Scanner;
 
 public class OOEGameController {
-    public static void playOneRound(OOEGame ooeGame, Scanner scanner) {
+    public static void playOneRound(OOEGame ooeGame, Status status, Scanner scanner) {
         TargetNumber targetNumber = ooeGame.createTargetNumber();
         boolean superBettingFlag = InputView.inputSuperBettingFlag(scanner);
         if (isNormalMode(superBettingFlag)) {
             playNormalMode(ooeGame, targetNumber, scanner);
+            ooeGame.terminateIfAnyoneBankrupt(status);
             return;
         }
         playSuperBettingMode(ooeGame, targetNumber, scanner);
+        ooeGame.terminateIfAnyoneBankrupt(status);
     }
 
     private static boolean isNormalMode(boolean superBettingFlag) {
