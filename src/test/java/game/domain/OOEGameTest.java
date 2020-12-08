@@ -14,11 +14,11 @@ public class OOEGameTest {
     @Test
     public void 사용자가_이겼을때_자금_상태_확인() {
         List<String> playerNames = Arrays.asList("fobi", "heon");
-        BettingMoney bettingMoney = new BettingMoney(1000);
+        int bettingMoney = 1000;
         OOEGame ooeGame = OOEGameCreator.createOOEGame(playerNames, new MustReturnOddStrategy());
 
         //when
-        ooeGame.win(bettingMoney);
+        ooeGame.winNormalMode(bettingMoney);
 
         //then
         int balance = ooeGame.getUser().getBalance();
@@ -28,11 +28,11 @@ public class OOEGameTest {
     @Test
     public void 사용자가_졌을때_자금_상태_확인() {
         List<String> playerNames = Arrays.asList("fobi", "heon");
-        BettingMoney bettingMoney = new BettingMoney(1000);
+        int bettingMoney = 1000;
         OOEGame ooeGame = OOEGameCreator.createOOEGame(playerNames, new MustReturnOddStrategy());
 
         //when
-        ooeGame.lose(bettingMoney);
+        ooeGame.loseNormalMode(bettingMoney);
 
         //then
         int balance = ooeGame.getUser().getBalance();

@@ -12,20 +12,20 @@ import java.util.Scanner;
 
 public class OOEGameController {
     public static void playOneRound(OOEGame ooeGame, Scanner scanner) {
+        TargetNumber targetNumber = ooeGame.createTargetNumber();
         boolean superBettingFlag = InputView.inputSuperBettingFlag(scanner);
         if (isNormalMode(superBettingFlag)) {
-            playNormalMode(ooeGame, scanner);
+            playNormalMode(ooeGame, targetNumber, scanner);
             return;
         }
-        playSuperBettingTurn();
+        playSuperBettingMode(ooeGame, targetNumber, scanner);
     }
 
     private static boolean isNormalMode(boolean superBettingFlag) {
         return !superBettingFlag;
     }
 
-    private static void playNormalMode(OOEGame ooeGame, Scanner scanner) {
-        TargetNumber targetNumber = ooeGame.createTargetNumber();
+    private static void playNormalMode(OOEGame ooeGame, TargetNumber targetNumber, Scanner scanner) {
         BettingMoney bettingMoney = InputView.inputBettingMoney(ooeGame.getUser(), scanner);
         OddOrEven oddOrEven = InputView.inputOddOrEven(scanner);
         Result result = ResultCreator.createResult(targetNumber, bettingMoney, oddOrEven);
@@ -35,13 +35,18 @@ public class OOEGameController {
     private static void proceedNormalModeResult(OOEGame ooeGame, Result result) {
         OutputView.printResultMessage(result);
         if (result.isWin()) {
-            ooeGame.win(result.getBettingMoney());
+            ooeGame.winNormalMode(result.getBettingMoney());
             return;
         }
-        ooeGame.lose(result.getBettingMoney());
+        ooeGame.loseNormalMode(result.getBettingMoney());
     }
 
-    private static void playSuperBettingTurn() {
-
+    private static void playSuperBettingMode(OOEGame ooeGame, TargetNumber targetNumber, Scanner scanner) {
+        int superBettingNumber = InputView.inputSuperBettingNumber(scanner);
+        if (targetNumber.isRightSuperBettingNumber(superBettingNumber)) {
+            ooeGame.winSuperBettingMode();
+            return;
+        }
+        ooeGame.loseSuperBettingMode();
     }
 }

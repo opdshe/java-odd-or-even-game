@@ -20,12 +20,12 @@ public class OutputView {
     }
 
     private static void printWinMessage(Result result) {
-        int money = result.getBettingMoney().getMoney();
+        int money = result.getBettingMoney();
         printMessageAndNewLine(WIN_MESSAGE + money + OBTAIN_MONEY_MESSAGE);
     }
 
     private static void printLoseMessage(Result result) {
-        int money = result.getBettingMoney().getMoney();
+        int money = result.getBettingMoney();
         printMessageAndNewLine(LOSE_MESSAGE + money + LOSE_MONEY_MESSAGE);
     }
 

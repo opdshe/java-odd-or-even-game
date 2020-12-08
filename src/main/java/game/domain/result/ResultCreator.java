@@ -9,9 +9,9 @@ public class ResultCreator {
     }
 
     public static Result createResult(TargetNumber number, BettingMoney bettingMoney, OddOrEven oddOrEven) {
-        if (number.isRight(oddOrEven)) {
-            return new Result(bettingMoney, Result.ResultFlag.WIN);
+        if (number.isRightOddOrEven(oddOrEven)) {
+            return new Result(bettingMoney.getMoney(), Result.ResultFlag.WIN);
         }
-        return new Result(bettingMoney, Result.ResultFlag.LOSE);
+        return new Result(bettingMoney.getMoney(), Result.ResultFlag.LOSE);
     }
 }

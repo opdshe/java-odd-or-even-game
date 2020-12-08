@@ -1,16 +1,14 @@
 package game.domain.result;
 
-import game.domain.BettingMoney;
-
 public class Result {
     public enum ResultFlag {
         WIN, LOSE;
     }
 
-    private final BettingMoney bettingMoney;
+    private final int bettingMoney;
     private final ResultFlag resultFlag;
 
-    public Result(BettingMoney bettingMoney, ResultFlag resultFlag) {
+    public Result(int bettingMoney, ResultFlag resultFlag) {
         this.bettingMoney = bettingMoney;
         this.resultFlag = resultFlag;
     }
@@ -19,7 +17,7 @@ public class Result {
         return resultFlag == (ResultFlag.WIN);
     }
 
-    public BettingMoney getBettingMoney() {
+    public int getBettingMoney() {
         return bettingMoney;
     }
 }

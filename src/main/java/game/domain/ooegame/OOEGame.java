@@ -1,14 +1,13 @@
 package game.domain.ooegame;
 
-import game.domain.BettingMoney;
 import game.domain.TargetNumber;
 import game.domain.player.Player;
 import game.domain.strategies.NumberGeneratingStrategy;
 
 public class OOEGame {
-    private NumberGeneratingStrategy generatingStrategy;
-    private Player computer;
-    private Player user;
+    private final NumberGeneratingStrategy generatingStrategy;
+    private final Player computer;
+    private final Player user;
 
     public OOEGame(Player computer, Player user, NumberGeneratingStrategy generatingStrategy) {
         this.computer = computer;
@@ -20,14 +19,26 @@ public class OOEGame {
         return new TargetNumber(this.generatingStrategy.generate());
     }
 
-    public void win(BettingMoney bettingMoney) {
+    public void winNormalMode(int bettingMoney) {
         user.win(bettingMoney);
         computer.lose(bettingMoney);
     }
 
-    public void lose(BettingMoney bettingMoney) {
+    public void loseNormalMode(int bettingMoney) {
         user.lose(bettingMoney);
         computer.win(bettingMoney);
+    }
+
+    public void winSuperBettingMode() {
+        int money = computer.getBalance();
+        user.win(money);
+        computer.lose(money);
+    }
+
+    public void loseSuperBettingMode() {
+        int money = user.getHalfOfBalance();
+        user.win(money);
+        computer.lose(money);
     }
 
     public Player getUser() {

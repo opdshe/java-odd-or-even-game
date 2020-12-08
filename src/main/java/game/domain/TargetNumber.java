@@ -14,7 +14,7 @@ public class TargetNumber {
         this.number = number;
     }
 
-    public boolean isRight(OddOrEven oddOrEven) {
+    public boolean isRightOddOrEven(OddOrEven oddOrEven) {
         return getTargetOddOrEven().equals(oddOrEven);
     }
 
@@ -23,5 +23,9 @@ public class TargetNumber {
             return OddOrEven.EVEN;
         }
         return OddOrEven.ODD;
+    }
+
+    public boolean isRightSuperBettingNumber(int superBettingNumber) {
+        return number == superBettingNumber;
     }
 }

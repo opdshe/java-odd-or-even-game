@@ -2,6 +2,7 @@ package game.views;
 
 import game.domain.BettingMoney;
 import game.domain.SuperBettingMapper;
+import game.domain.TargetNumber;
 import game.domain.oddoreven.OddOrEven;
 import game.domain.oddoreven.OddOrEvenMapper;
 import game.domain.player.Player;
@@ -17,6 +18,8 @@ public class InputView {
     private static final String INPUT_SUPER_BETTING_FLAG = "슈퍼베팅을 사용하시겠습니까? 사용: 1, 미사용: 2";
     private static final String INPUT_BETTING_MONEY = "베팅 금액을 입력해 주세요. 금액은 1000단위로 입력 가능합니다. ";
     private static final String INPUT_ODD_OR_EVEN = "홀/짝을 입력해 주세요. 홀수: 1, 짝수: 2";
+    private static final String INPUT_SUPER_BETTING_NUMBER = TargetNumber.MIN_VALUE + "~" + TargetNumber.MAX_VALUE +
+            "사이의 숫자를 입력해 주세요. ";
 
     private InputView() {
     }
@@ -49,7 +52,7 @@ public class InputView {
         OutputView.printMessageAndNewLine(INPUT_SUPER_BETTING_FLAG);
         String superBettingFlag = scanner.nextLine();
         try {
-            SuperBettingValidator.validateSuperBetting(superBettingFlag);
+            SuperBettingFlagValidator.validateSuperBetting(superBettingFlag);
             return SuperBettingMapper.getSuperBettingFlag(superBettingFlag);
         } catch (IllegalArgumentException exception) {
             return inputSuperBettingFlag(scanner);
@@ -77,6 +80,18 @@ public class InputView {
         } catch (IllegalArgumentException exception) {
             OutputView.printMessageAndNewLine(exception.getMessage());
             return inputOddOrEven(scanner);
+        }
+    }
+
+    public static int inputSuperBettingNumber(Scanner scanner) {
+        OutputView.printMessageAndNewLine(INPUT_SUPER_BETTING_NUMBER);
+        String superBettingNumber = scanner.nextLine();
+        try {
+            SuperBettingNumberValidator.validateSuperBettingNumber(superBettingNumber);
+            return Integer.parseInt(superBettingNumber);
+        } catch (IllegalArgumentException exception) {
+            OutputView.printMessageAndNewLine(exception.getMessage());
+            return inputSuperBettingNumber(scanner);
         }
     }
 }
