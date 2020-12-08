@@ -7,7 +7,7 @@ public class WinnerCreator {
     private WinnerCreator() {
     }
 
-    private static Winner createWinner(OOEGame ooeGame) {
+    public static Winner createWinner(OOEGame ooeGame) {
         Player computer = ooeGame.getComputer();
         Player user = ooeGame.getUser();
         return selectWinner(computer, user);
