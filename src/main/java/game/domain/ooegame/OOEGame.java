@@ -38,8 +38,8 @@ public class OOEGame {
 
     public void loseSuperBettingMode() {
         int money = user.getHalfOfBalance();
-        user.win(money);
-        computer.lose(money);
+        user.lose(money);
+        computer.win(money);
     }
 
     public void terminateIfAnyoneBankrupt(Status status) {
