@@ -30,11 +30,19 @@ public class Player {
         return balance <= ZERO;
     }
 
+    public int getProfit() {
+        return balance - INITIAL_BALANCE;
+    }
+
     public int getBalance() {
         return balance;
     }
 
     public int getHalfOfBalance() {
         return balance / TWO;
+    }
+
+    public String getName() {
+        return name;
     }
 }

@@ -55,4 +55,8 @@ public class OOEGame {
     public Player getUser() {
         return user;
     }
+
+    public Player getComputer() {
+        return computer;
+    }
 }

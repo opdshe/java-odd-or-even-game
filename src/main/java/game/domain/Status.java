@@ -15,7 +15,7 @@ public class Status {
         this.state = State.TERMINATE;
     }
 
-    public boolean isTerminate() {
-        return state.equals(State.TERMINATE);
+    public boolean isContinue() {
+        return state.equals(State.CONTINUE);
     }
 }
