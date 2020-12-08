@@ -22,7 +22,7 @@
 - 자바 코드 컨벤션을 지키면서 프로그래밍한다.
   - 기본적으로 [Google Java Style Guide](https://google.github.io/styleguide/javaguide.html)을 원칙으로 한다.
   - 단, 들여쓰기는 '2 spaces'가 아닌 '4 spaces'로 한다.
-- indent(인덴트, 들여쓰기) depth를 3이 넘지 않도록 구현한다. 2까지만 허용한다.
+- **indent(인덴트, 들여쓰기) depth를 2 넘지 않도록 구현한다. 1까지만 허용한다.**
   - 예를 들어 while문 안에 if문이 있으면 들여쓰기는 2이다.
   - 힌트: indent(인덴트, 들여쓰기) depth를 줄이는 좋은 방법은 함수(또는 메소드)를 분리하면 된다.
 - 3항 연산자를 쓰지 않는다.
