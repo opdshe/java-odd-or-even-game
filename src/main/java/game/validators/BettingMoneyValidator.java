@@ -1,7 +1,7 @@
 package game.validators;
 
 import game.domain.BettingMoney;
-import game.domain.Player;
+import game.domain.player.Player;
 import game.exceptions.IllegalBettingMoneyException;
 import game.exceptions.NotNumericException;
 import game.exceptions.NotPositiveException;

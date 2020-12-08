@@ -1,6 +1,6 @@
 package game.validators;
 
-import game.domain.Player;
+import game.domain.player.Player;
 import game.exceptions.CompletelyBlankPlayerNamesException;
 import game.exceptions.DuplicatedPlayerNameException;
 import game.exceptions.PartiallyBlankPlayerNamesException;

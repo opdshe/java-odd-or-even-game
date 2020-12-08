@@ -1,6 +1,10 @@
 package game.views;
 
-import game.domain.*;
+import game.domain.BettingMoney;
+import game.domain.SuperBettingMapper;
+import game.domain.oddoreven.OddOrEven;
+import game.domain.oddoreven.OddOrEvenMapper;
+import game.domain.player.Player;
 import game.validators.*;
 import utils.StringConverter;
 

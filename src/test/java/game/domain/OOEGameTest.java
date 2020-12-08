@@ -1,5 +1,7 @@
 package game.domain;
 
+import game.domain.ooegame.OOEGame;
+import game.domain.ooegame.OOEGameCreator;
 import game.domain.strategies.MustReturnOddStrategy;
 import org.junit.Test;
 

@@ -1,5 +1,8 @@
-package game.domain;
+package game.domain.ooegame;
 
+import game.domain.BettingMoney;
+import game.domain.TargetNumber;
+import game.domain.player.Player;
 import game.domain.strategies.NumberGeneratingStrategy;
 
 public class OOEGame {

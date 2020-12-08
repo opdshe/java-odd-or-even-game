@@ -1,6 +1,10 @@
 package game.domain.strategies;
 
-import game.domain.*;
+import game.domain.BettingMoney;
+import game.domain.TargetNumber;
+import game.domain.oddoreven.OddOrEven;
+import game.domain.result.Result;
+import game.domain.result.ResultCreator;
 import org.junit.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;

@@ -1,4 +1,6 @@
-package game.domain;
+package game.domain.result;
+
+import game.domain.BettingMoney;
 
 public class Result {
     public enum ResultFlag {

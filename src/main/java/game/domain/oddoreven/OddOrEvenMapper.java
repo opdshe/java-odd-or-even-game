@@ -1,4 +1,4 @@
-package game.domain;
+package game.domain.oddoreven;
 
 import java.util.HashMap;
 import java.util.Map;

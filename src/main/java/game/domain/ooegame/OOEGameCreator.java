@@ -1,5 +1,7 @@
-package game.domain;
+package game.domain.ooegame;
 
+import game.domain.player.Player;
+import game.domain.player.PlayerCreator;
 import game.domain.strategies.NumberGeneratingStrategy;
 
 import java.util.List;

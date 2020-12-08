@@ -1,5 +1,7 @@
 package game.domain;
 
+import game.domain.oddoreven.OddOrEven;
+
 public class TargetNumber {
     public static final int MIN_VALUE = 1;
     public static final int MAX_VALUE = 10;

@@ -1,6 +1,6 @@
 package game.views;
 
-import game.domain.Result;
+import game.domain.result.Result;
 
 public class OutputView {
     private static final String WIN_MESSAGE = "정답입니다. ";
