@@ -111,3 +111,11 @@ private static final Random RANDOM = new Random();
 - **최종 승자를 출력하는 기능**
   - 무승부이면 "무승부입니다. " 출력
   - 승자가 한 명이면 이름과 순 수익 출력
+
+- **한 라운드가 끝나면 현재 자금 상태를 출력하는 기능**
+
+- **게임 전체 진행 로직 구현**
+<br>
+
+## 실행 화면
+<img src="/images/실행화면.png" width="50%" height="50%">
