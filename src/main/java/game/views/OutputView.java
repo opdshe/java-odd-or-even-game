@@ -1,5 +1,7 @@
 package game.views;
 
+import game.domain.ooegame.OOEGame;
+import game.domain.player.Player;
 import game.domain.result.NormalModeResult;
 import game.domain.result.SuperBettingModeResult;
 import game.domain.winner.Winner;
@@ -11,6 +13,7 @@ public class OutputView {
     private static final String LOSE_MONEY_MESSAGE = "원을 잃었습니다. ";
     private static final String WIN = "가 승리하엿습니다. ";
     private static final String PROFIT_IS = "최종 수익은";
+    private static final String COLON = " : ";
 
     private OutputView() {
     }
@@ -43,6 +46,15 @@ public class OutputView {
 
     public static void printWinner(Winner winner) {
         OutputView.printMessageAndNewLine(winner.getName() + WIN + PROFIT_IS + winner.getProfit());
+    }
+
+    public static void printCurrentStatus(OOEGame ooeGame) {
+        printPlayerStatus(ooeGame.getComputer());
+        printPlayerStatus(ooeGame.getUser());
+    }
+
+    private static void printPlayerStatus(Player player) {
+        printMessageAndNewLine(player.getName() + COLON + player.getBalance());
     }
 
     public static void printMessageAndNewLine(String message) {
